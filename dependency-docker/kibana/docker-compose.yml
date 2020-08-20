@@ -1,0 +1,22 @@
+version: '3'
+services:
+  kibana:
+    image: docker.elastic.co/kibana/kibana:7.4.0
+    container_name: kibana
+    ports:
+      - "5601:5601"
+    restart: always
+    networks:
+      backend:
+        aliases:
+          - kibana
+    volumes:
+      - ./config/kibana.yml:/usr/share/kibana/config/kibana.yml
+
+# docker network create -d=overlay --attachable backend
+# docker network create --opt encrypted -d=overlay --attachable --subnet 10.10.0.0/16 backend
+networks:
+  backend:
+    external:
+      name: backend
+

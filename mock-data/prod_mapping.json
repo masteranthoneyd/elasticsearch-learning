@@ -1,0 +1,145 @@
+{
+  "search_product_type": {
+    "properties": {
+      "id": {
+        "type": "long",
+        "index": "not_analyzed"
+      },
+      "skuId": {
+        "type": "long",
+        "index": "not_analyzed"
+      },
+      "prodId": {
+        "type": "long",
+        "index": "not_analyzed"
+      },
+      "shopId": {
+        "type": "long",
+        "index": "not_analyzed"
+      },
+      "pic": {
+        "type": "keyword"
+      },
+      "countryName": {
+        "type": "keyword"
+      },
+      "brandName": {
+        "type": "keyword"
+      },
+      "createTime": {
+        "type": "date",
+        "format": "yyyy-MM-dd HH:mm:ss||yyyy-MM-dd||epoch_millis"
+      },
+      "updateTime": {
+        "type": "date",
+        "format": "yyyy-MM-dd HH:mm:ss||yyyy-MM-dd||epoch_millis"
+      },
+      "prodPrice": {
+        "type": "float",
+        "index": "not_analyzed"
+      },
+      "referPrice": {
+        "type": "float",
+        "index": "not_analyzed"
+      },
+      "saledTotal": {
+        "type": "integer",
+        "index": "not_analyzed"
+      },
+      "secondCataId": {
+        "type": "keyword"
+      },
+      "firstCataId": {
+        "type": "keyword"
+      },
+      "thirdCataId": {
+        "type": "keyword"
+      },
+      "prodName": {
+        "type": "text",
+        "index": "analyzed",
+        "analyzer": "ikIndexAnalyzer",
+        "fields": {
+          "SPY": {
+            "type": "text",
+            "index": "analyzed",
+            "analyzer": "pinyinSimpleIndexAnalyzer"
+          },
+          "FPY": {
+            "type": "text",
+            "index": "analyzed",
+            "analyzer": "pinyinFullIndexAnalyzer"
+          }
+        }
+      },
+      "skuAttr": {
+        "type": "text",
+        "index": "analyzed",
+        "analyzer": "ikIndexAnalyzer",
+        "fields": {
+          "SPY": {
+            "type": "text",
+            "index": "analyzed",
+            "analyzer": "pinyinSimpleIndexAnalyzer"
+          },
+          "FPY": {
+            "type": "text",
+            "index": "analyzed",
+            "analyzer": "pinyinFullIndexAnalyzer"
+          }
+        }
+      },
+      "secondCataName": {
+        "type": "text",
+        "index": "analyzed",
+        "analyzer": "ikIndexAnalyzer",
+        "fields": {
+          "SPY": {
+            "type": "text",
+            "index": "analyzed",
+            "analyzer": "pinyinSimpleIndexAnalyzer"
+          },
+          "FPY": {
+            "type": "text",
+            "index": "analyzed",
+            "analyzer": "pinyinFullIndexAnalyzer"
+          }
+        }
+      },
+      "firstCataName": {
+        "type": "text",
+        "index": "analyzed",
+        "analyzer": "ikIndexAnalyzer",
+        "fields": {
+          "SPY": {
+            "type": "text",
+            "index": "analyzed",
+            "analyzer": "pinyinSimpleIndexAnalyzer"
+          },
+          "FPY": {
+            "type": "text",
+            "index": "analyzed",
+            "analyzer": "pinyinFullIndexAnalyzer"
+          }
+        }
+      },
+      "thirdCataName": {
+        "type": "text",
+        "index": "analyzed",
+        "analyzer": "ikIndexAnalyzer",
+        "fields": {
+          "SPY": {
+            "type": "text",
+            "index": "analyzed",
+            "analyzer": "pinyinSimpleIndexAnalyzer"
+          },
+          "FPY": {
+            "type": "text",
+            "index": "analyzed",
+            "analyzer": "pinyinFullIndexAnalyzer"
+          }
+        }
+      }
+    }
+  }
+}

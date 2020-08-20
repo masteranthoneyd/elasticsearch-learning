@@ -1,0 +1,39 @@
+spring:
+  elasticsearch:
+    bboss:
+      elasticUser: elastic
+      elasticPassword: elastic
+      elasticsearch:
+        rest:
+          hostNames: 127.0.0.1:9200
+        dateFormat: yyyy.MM.dd
+        timeZone: Asia/Shanghai
+        ttl: 2d
+        # DSL脚本调试日志开关
+        showTemplate: true
+        discoverHost: false
+        # 定义慢dsl耗时阈值，执行时间长超过指定阈值的dsl为慢dsl，必须指定大于0的数值
+        slowDslThreshold: 3000
+      dslfile:
+        # dsl配置文件热加载扫描时间间隔，毫秒为单位，默认5秒扫描一次，<= 0时关闭扫描机制
+        refreshInterval: -1
+      http:
+        timeoutConnection: 5000
+        timeoutSocket: 5000
+        connectionRequestTimeout: 5000
+        retryTime: 1
+        # 重试时间间隔，单位：毫秒
+        retryInterval: 1000
+        maxLineLength: -1
+        maxHeaderCount: 200
+        # 总共允许的最大连接数
+        maxTotal: 400
+        # 每个地址允许的最大连接数
+        defaultMaxPerRoute: 200
+        soReuseAddress: false
+        soKeepAlive: false
+        timeToLive: 3600000
+        keepAlive: 3600000
+        keystore:
+        keyPassword:
+        hostnameVerifier:

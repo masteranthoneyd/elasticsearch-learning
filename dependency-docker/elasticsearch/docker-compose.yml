@@ -1,0 +1,31 @@
+version: '3'
+services:
+  elk-elasticsearch:
+    image: yangbingdong/elasticsearch-ik-pinyin:7.4.0
+    container_name: elasticsearch
+    ports:
+      - "9200:9200"
+    restart: always
+    environment:
+      - bootstrap.memory_lock=true
+      - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
+      - ELASTIC_PASSWORD=elastic
+    ulimits:
+      memlock:
+        soft: -1
+        hard: -1
+    volumes:
+      - ./config/elasticsearch.yml:/usr/share/elasticsearch/config/elasticsearch.yml
+      - ./data:/usr/share/elasticsearch/data
+    networks:
+      backend:
+        aliases:
+          - elasticsearch
+
+# docker network create -d=overlay --attachable backend
+# docker network create --opt encrypted -d=overlay --attachable --subnet 10.10.0.0/16 backend
+networks:
+  backend:
+    external:
+      name: backend
+
