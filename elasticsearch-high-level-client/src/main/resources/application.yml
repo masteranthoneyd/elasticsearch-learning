@@ -1,0 +1,11 @@
+elasticsearch:
+  http-hosts:
+    - hostname: 120.79.61.172
+      port: 9400
+
+  username: elastic
+  password: F7EdJ6VaBl9QzFQVVq0w
+
+logging:
+  level:
+    root: debug
