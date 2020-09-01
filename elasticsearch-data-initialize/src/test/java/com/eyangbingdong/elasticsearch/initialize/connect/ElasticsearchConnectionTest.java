@@ -27,4 +27,9 @@ class ElasticsearchConnectionTest {
 	    log.info(response);
         BaseApplicationContext.shutdown();
     }
+
+    @Test
+    void initMockData() {
+
+    }
 }

@@ -37,6 +37,7 @@ class ElasticsearchHighLevelClientApplicationTests {
         SearchResponse response = restHighLevelClient.search(searchRequest, RequestOptions.DEFAULT);
         System.out.println(JSONObject.parseObject(response.toString()).toString(SerializerFeature.PrettyFormat));
 
+
     }
 
 }

@@ -1,0 +1,102 @@
+<properties>
+    <property name="createProdIndice">
+        <![CDATA[
+        {
+          "settings": {
+            "number_of_replicas": 0,
+            "index.refresh_interval": "5s"
+          },
+          "mappings": {
+            "dynamic": "strict",
+            "properties": {
+              "brandId": {
+                "type": "keyword"
+              },
+              "brandName": {
+                "type": "keyword"
+              },
+              "brandNameEn": {
+                "type": "keyword"
+              },
+              "cashReturnTotal": {
+                "type": "scaled_float",
+                "scaling_factor": 100
+              },
+              "commission": {
+                "type": "scaled_float",
+                "scaling_factor": 100
+              },
+              "countryId": {
+                "type": "keyword"
+              },
+              "countryName": {
+                "type": "keyword"
+              },
+              "createTime": {
+                "type": "date",
+                "format": "yyyy-MM-dd HH:mm:ss||epoch_millis"
+              },
+              "firstCataId": {
+                "type": "keyword"
+              },
+              "firstCataName": {
+                "type": "text",
+                "analyzer": "ik_max_word",
+                "index_options": "docs"
+              },
+              "pic": {
+                "type": "keyword"
+              },
+              "prodAttr": {
+                "type": "text",
+                "index_options": "docs"
+              },
+              "prodId": {
+                "type": "keyword"
+              },
+              "prodName": {
+                "type": "text",
+                "analyzer": "ik_max_word"
+              },
+              "prodTotal": {
+                "type": "long"
+              },
+              "referPrice": {
+                "type": "scaled_float",
+                "scaling_factor": 100
+              },
+              "salePrice": {
+                "type": "scaled_float",
+                "scaling_factor": 100
+              },
+              "saledTotal": {
+                "type": "long"
+              },
+              "secondCataId": {
+                "type": "keyword"
+              },
+              "secondCataName": {
+                "type": "text",
+                "analyzer": "ik_max_word"
+              },
+              "skuId": {
+                "type": "keyword"
+              },
+              "thirdCataId": {
+                "type": "keyword"
+              },
+              "thirdCataName": {
+                "type": "text",
+                "analyzer": "ik_max_word"
+              },
+              "updateTime": {
+                "type": "date",
+                "format": "yyyy-MM-dd HH:mm:ss||epoch_millis"
+              }
+            }
+          }
+        }
+        ]]>
+    </property>
+
+</properties>

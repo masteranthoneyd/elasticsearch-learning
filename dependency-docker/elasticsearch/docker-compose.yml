@@ -17,6 +17,8 @@ services:
     volumes:
       - ./config/elasticsearch.yml:/usr/share/elasticsearch/config/elasticsearch.yml
       - ./data:/usr/share/elasticsearch/data
+      - ./config/IKAnalyzer.cfg.xml:/usr/share/elasticsearch/config/analysis-ik/IKAnalyzer.cfg.xml
+      - ./config/mydict.dic:/usr/share/elasticsearch/config/analysis-ik/custom/mydict.dic
     networks:
       backend:
         aliases:
